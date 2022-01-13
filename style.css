@@ -26,16 +26,29 @@ h1 {
 
 
 .card{
-    float: left;
+    /* float: left; */
     /* width: 25%; */
     padding: 10px;
     text-align: center;
     font-size: 10px;
-    color: purple;
+    color: navy;
     font-family: "Lucida Console";
 
 }
 
-#comment-form{
+#comment-title{
+    position: relative;
+    text-align: center;
+    /* left: 200px; */
+    /* bottom: 318px; */
+    font-size: 10px;
+}
+
+.comment-container{
     font-family: "Lucida Console";
+    /* float: right; */
+    position: relative;
+    text-align: center;
+    left: 200px;
+    bottom: 318px;
 }
