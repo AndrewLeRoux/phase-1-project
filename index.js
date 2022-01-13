@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    
     fetch('https://api.boardgameatlas.com/api/search?order_by/rank&client_id=at1HSHmb21')
     .then(resp => resp.json())
     .then(json => renderGames(json.games))
@@ -7,7 +8,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 //keeps track of all likes for each board game
 const likeCountObj ={}
-
 
 function renderGames(gamesArray){
     gamesArray.forEach(game => {
@@ -19,10 +19,12 @@ function createGameCard(game){
     const gameCollection = document.querySelector('#game-collection') // div containing all games
     const div = document.createElement('div') // div for each game
     div.className = 'card'
+    div.id = `${game.rank}`
 
-    //name of game
+    //name and rank of game
     const h2 = document.createElement('h2')
-    h2.innerHTML = game.name
+    
+    h2.innerHTML = game.rank + ": " + game.name
     div.appendChild(h2)
 
     //img of game
@@ -51,4 +53,23 @@ function createGameCard(game){
 
     // add game to game collection
     gameCollection.appendChild(div)
+}
+
+
+
+// leave comments
+let form = document.querySelector('form')
+form.addEventListener('submit', leaveComment)
+
+function leaveComment(event) {
+    event.preventDefault()
+
+    let p = document.createElement('p')
+    const list = document.getElementById('list')
+
+    console.log(event.target.commentInput.value)
+    p.textContent = `${event.target.commentInput.value}`
+    list.appendChild(p)
+
+    form.reset()
 }
