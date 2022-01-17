@@ -67,27 +67,19 @@ function createGameCard(game){
         
     })
 
-    // div to contain all comments for each game
-    const commentContainer = document.createElement('div')
-    commentContainer.className = 'comment-container'
-
-    
-    const commentTitle = document.createElement('p')
-    commentTitle.id = 'comment-title'
-    commentTitle.innerHTML = game.name + ' Comments'
-    commentContainer.appendChild(commentTitle)
-
     // create form
     const form = createCommentForm()
+    
     form.addEventListener('submit', (event) => {
         event.preventDefault()
         let p = document.createElement('p')
+        let comments = document.querySelector('#commentSection')
         p.className = 'userComments'
-        p.innerHTML = `${event.target.commentInput.value}`
-        commentContainer.appendChild(p)
+        p.innerHTML = `${game.name}: ${event.target.commentInput.value}`
+        comments.appendChild(p)
         form.reset()
     })
-
+    
 
     // append all elements to the game div
     div.appendChild(h2)
@@ -96,7 +88,7 @@ function createGameCard(game){
     div.appendChild(likeButton)
     div.appendChild(favoriteButton)
     div.appendChild(form)
-    div.appendChild(commentContainer)
+    //div.appendChild(commentContainer)
 
     // add game to game collection
     gameCollection.appendChild(div)

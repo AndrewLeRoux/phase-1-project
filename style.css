@@ -27,6 +27,7 @@ h1 {
 
 .card{
     /* width: 25%; */
+    float: left;
     padding: 10px;
     text-align: center;
     font-size: 12px;
@@ -55,7 +56,7 @@ h1 {
 }
 
 .userComments {
-    position: relative;
+    /* position: relative; */
 }
 
 .like-btn {
@@ -65,4 +66,17 @@ h1 {
 
 .favorite-btn {
     font-size: 12px;
+}
+
+#commentSection{
+    clear:both;
+    text-align: center;
+    color: navy;
+    font-size: 12px;
+}
+
+#commentSectionTitle{
+    font-size: 20px;
+    text-decoration: underline;
+    
 }
