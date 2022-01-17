@@ -6,16 +6,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(json => renderGames(json.games))
 })
 
-//keeps track of all likes for each board game
-const likeCountObj ={}
-const favoriteTracker = {}
 
+const likeCountObj ={} //keeps track of number likes for each board game
+const favoriteTracker = {} //keeps track of if a game is favorited or not
+
+// function to create all games using the game array obtained from the fetch request
 function renderGames(gamesArray){
     gamesArray.forEach(game => {
-        createGameCard(game)
+        createGameCard(game) //creates an individual game
 })   
 }
 
+// create one game element
 function createGameCard(game){
     const gameCollection = document.querySelector('#game-collection') // div containing all games
     
@@ -25,22 +27,22 @@ function createGameCard(game){
     div.id = `${game.rank}`
     
 
-    //name and rank of game
+    //name and rank of game (displayed on webpage)
     const h2 = document.createElement('h2')
     h2.innerHTML = game.rank + ": " + game.name
-    
+    div.appendChild(h2)
 
     //img of game
     const img = document.createElement('img');
     img.className = 'game-image'
     img.src = game.image_url
-    
+    div.appendChild(img)
 
-    //like button text
+    //text displaying the number of likes for each game
     const p = document.createElement('p');
     likeCountObj[game.name] = 0
     p.innerHTML = likeCountObj[game.name] + ' Likes'
-    
+    div.appendChild(p)
 
     //create like button and add event listener
     const likeButton = createLikeButton()
@@ -49,7 +51,9 @@ function createGameCard(game){
         likeCountObj[game.name]++
         p.innerHTML = likeCountObj[game.name] + ' Likes'
     })
-    
+    div.appendChild(likeButton)
+
+
     //create favorite button and add event listener to favorite and unfavorite games
     const favoriteButton = createFavoirteButton()
     favoriteTracker[game.name] = false
@@ -66,6 +70,7 @@ function createGameCard(game){
         }
         
     })
+    div.appendChild(favoriteButton)
 
     // create form
     const form = createCommentForm()
@@ -80,19 +85,12 @@ function createGameCard(game){
         form.reset()
     })
     
-
-    // append all elements to the game div
-    div.appendChild(h2)
-    div.appendChild(img)
-    div.appendChild(p)
-    div.appendChild(likeButton)
-    div.appendChild(favoriteButton)
-    div.appendChild(form)
-    //div.appendChild(commentContainer)
+    div.appendChild(form)   
 
     // add game to game collection
     gameCollection.appendChild(div)
 }
+
 
 function createLikeButton(){
     const button = document.createElement('button')
@@ -115,24 +113,23 @@ function createCommentForm(){
     const form = document.createElement('form')
     form.className = 'commentForm'
 
-    const comment = document.createElement('textarea')
     // comment input box
+    const comment = document.createElement('textarea')
     comment.id = 'textInput'
     comment.name = 'commentInput'
     comment.placeholder = 'Comment on game...'
     comment.rows = 3
     comment.cols = 30
+    form.appendChild(comment)
 
     // break line element
     const br = document.createElement('br')
+    form.appendChild(br)
 
     // submit button
     const submit = document.createElement('button')
     submit.id = 'submit'
     submit.innerHTML = 'Submit comment'
-
-    form.appendChild(comment)
-    form.appendChild(br)
     form.appendChild(submit)
 
     return form

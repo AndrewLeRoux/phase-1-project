@@ -18,7 +18,6 @@ h1 {
 }
 
 .game-image {
-/* justify-self: center; */
     height: 12rem;
     width: auto;
     max-width: 100%;
@@ -26,7 +25,6 @@ h1 {
 
 
 .card{
-    /* width: 25%; */
     float: left;
     padding: 10px;
     text-align: center;
@@ -35,28 +33,6 @@ h1 {
     font-family: "Lucida Console";
 
 
-}
-
-#comment-title{
-    /* position: relative; */
-    /* text-align: center; */
-    /* left: 200px; */
-    /* bottom: 318px; */
-    font-size: 14px;
-    text-decoration: underline
-}
-
-.comment-container{
-    font-family: "Lucida Console";
-    /* float: right; */
-    position: relative;
-    text-align: center;
-    left: 300px;
-    bottom: 318px;
-}
-
-.userComments {
-    /* position: relative; */
 }
 
 .like-btn {
