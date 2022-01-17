@@ -15,7 +15,7 @@ These games are displayed on the webpage with the name, rank, and image of the g
 - ![Image](images/likeButton.jpg)
 Clicking the like button will update the like button counter for each game. Text below the game image displays the number of likes each game has.
 
-- ![image](images/favoriteButton.jpg) => 1[image](images/favoriteButton.jpg) 
+- ![image](images/favoriteButton.jpg) / ![image](images/favoriteButton.jpg) 
 Clicking the favorite button toggles the buttons status from unfavorited to favorited. The default setting is unfavorited which is displayed as a black star shape outline. The favorited status is displayed as a filled in yellow star.
 
 - ![image](images/CommentForm.jpg)
