@@ -1,5 +1,4 @@
-
-Top 25 Board Games
+# Top 25 Board Games
 
 This application takes a list of the 25 most popular games as ranked by the Board Game Atlas website (BoardGameAtlas.com). The follwing api below is used to pull this list:
 
