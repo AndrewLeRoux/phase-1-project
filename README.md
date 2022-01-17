@@ -23,5 +23,3 @@ Clicking the favorite button toggles the buttons status from unfavorited to favo
 - ![image](images/CommentForm.jpg)
 
 Typing a comment and submitting it using the "Submit comment" button will post your comment to the Comment section at the bottom of the page. The comment will appear with the name of the game commented followed by the users input, seperated by a colon.
-
-![image](images/homer.gif)
