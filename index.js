@@ -53,7 +53,6 @@ function createGameCard(game){
     })
     div.appendChild(likeButton)
 
-
     //create favorite button and add event listener to favorite and unfavorite games
     const favoriteButton = createFavoirteButton()
     favoriteTracker[game.name] = false
@@ -91,7 +90,6 @@ function createGameCard(game){
     gameCollection.appendChild(div)
 }
 
-
 function createLikeButton(){
     const button = document.createElement('button')
     button.className = 'like-btn'
@@ -106,7 +104,6 @@ function createFavoirteButton(){
     button.style = "color:black"
     return button
 }
-
 
 function createCommentForm(){
 
