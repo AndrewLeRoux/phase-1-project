@@ -1,6 +1,6 @@
 # Top 25 Board Games
 
-*This application displays a list of the 25 most popular games as ranked by the Board Game Atlas website,[BoardGameAtlas.com](BoardGameAtlas.com), and lets the user like, favorite, and comment on each game. The follwing api below is used to pull this list:*
+*This application displays a list of the 25 most popular games as ranked by the Board Game Atlas website, [BoardGameAtlas.com](BoardGameAtlas.com) , and lets the user like, favorite, and comment on each game. The follwing api below is used to pull this list:*
 
 [https://api.boardgameatlas.com/api/search?order_by/rank&client_id=at1HSHmb21](https://api.boardgameatlas.com/api/search?order_by/rank&client_id=at1HSHmb21)
 

@@ -1,8 +1,8 @@
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     
     fetch('https://api.boardgameatlas.com/api/search?order_by/rank&client_id=at1HSHmb21')
-    .then(resp => resp.json())
+    .then(response => response.json())
     .then(json => renderGames(json.games))
 })
 
